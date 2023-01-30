@@ -1,4 +1,4 @@
-<h1>Bus Daten</h1>
+<h1>Bus Daten und Ladestationen</h1>
 
 <table>
   <thead>
@@ -113,13 +113,19 @@
       <th>{{stationData.results[2].properties.Availability}}</th>
     </tr>
     <tr>
-      <th>{{stationData.results[5].properties.City}}</th>
-      <th>{{stationData.results[5].properties.Street}}</th>
-      <th>{{stationData.results[5].properties.IsOpen24Hours}}</th>
-      <th>{{stationData.results[5].properties.Availability}}</th>
+      <th>{{stationData.results[3].properties.City}}</th>
+      <th>{{stationData.results[3].properties.Street}}</th>
+      <th>{{stationData.results[3].properties.IsOpen24Hours}}</th>
+      <th>{{stationData.results[3].properties.Availability}}</th>
     </tr>
     <tr>
 
     </tr>
   </tbody>
 </table>
+
+<br>
+<br>
+
+<button (click)="refreshPage()">Refresh</button>
+

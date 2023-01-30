@@ -1,27 +1,41 @@
 # ApiProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
+## Install Angular CLI
 
-## Development server
+To install the Angular CLI run the command `npm install -g @angular/cli`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Start the Application
 
-## Code scaffolding
+Run `ng serve` to start the Application. Navigate to `http://localhost:4200/`. To Display the Application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Process of the Application
 
-## Build
+The Api's get with the HTTPClient Module called in the `loading-service.service.ts` file.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Projekt Beschreibung
 
-## Running unit tests
+Beim Api Projekt wird mittels Angular zwei APIs verwendet, die aktuelle Busdaten anzeigen und den Status von Ladestationen für Elektroautos.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Service
 
-## Running end-to-end tests
+Der `loading-service.service.ts` wird verwendet für den Aufruf der APIs. Mit den Methoden `getBusData` und `getTrainData` werden die Busdaten von Waldegg Birmensdorferstrasse und die Busdaten vom Winterthur Hauptbahnhof ausgegeben.
+Mit der Methode `getStationData` werden Daten von Ladestationen von den Koordinaten `x: 2600000` und `y: 1200000`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Component TS
 
-## Further help
+Im App Component werden die aufgerufenen APIs verwendet. In der Methode `NgOnInit` werden die Daten bei der Initialisierung der Komponente geladen.
+Mit dem Subscribe kann auf veränderungen der Daten reagiert werden und die Daten können so angepasst werden.
+Die Methode `refreshPage` wird verwendet für das erneute Laden der HTML seite.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Component HTML
+
+In drei HTML-Tabellen werden die JSON Daten dargestellt. Mit der Punktannotation in Angular kann auf das JSON-Objekt zugegriffen werden.
+Die Daten können mit geschweiften Klammern `{{objekt.name}}` in der HTML komponente dargestellt werden.
+Der Refresh Button kann gedrückt werden, um die Seite neu zu laden, wenn veraltete Daten angezeigt werden.
+
+## Component SCSS
+Die SCSS Komponente wird für das Styling der Tabellen und des Buttons verwendet.
+
+
+
+

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {LoadingServiceService} from "./loading-service.service";
-import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-root',
@@ -26,5 +25,9 @@ export class AppComponent {
     this.loadingServiceService.getStationData().subscribe(res => {
       this.stationData = res;
     })
+  }
+
+  refreshPage() {
+    location.reload();
   }
 }
